@@ -25,3 +25,12 @@ Le cluster local est créé via [Kind](https://kind.sigs.k8s.io/) avec la comman
 
 ```bash
 kind create cluster --name flask-cluster
+
+```
+## 🚀Charger l'image Dokcer dans le cluster Kind
+
+S'assurer que l'image Dokcer local est disponible en local.
+
+```bash
+kind load docker-image flask-app:latest --name flask-cluster
+```
