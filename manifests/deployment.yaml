@@ -1,0 +1,24 @@
+apiVersion: apps/v1 # ← apps obligatoire
+kind: Deployment
+metadata:
+  name: flask-deployment  # ← Nom explicite
+spec:
+  replicas: 2  # ← Le nombre de pods à créer
+  selector:
+    matchLabels:
+      app: flask  # ← Label utilisé pour identifier les pods à gérer
+  template:
+    metadata:
+      labels:
+        app: flask  # ← Doit correspondre au selector
+    spec:
+      containers:
+      - name: flask-container  # ← Nom du conteneur dans le pod
+        image: flask-app:latest  # ← Nom de l’image Docker locale
+        imagePullPolicy: Never  # ← Important pour Kind : utilise l’image locale
+        resources:
+          limits:
+            memory: "512Mi"  # ← Limite mémoire
+            cpu: "500m"      # ← Limite CPU (500 milliCPU = 0.5 CPU)
+        ports:
+        - containerPort: 5000  # ← Port exposé par l’application Flask

@@ -34,3 +34,37 @@ S'assurer que l'image Dokcer local est disponible en local.
 ```bash
 kind load docker-image flask-app:latest --name flask-cluster
 ```
+
+```md
+## 🚀 Déploiement Kubernetes
+
+### 1. 📁 Se placer dans le dossier `manifests/`
+```bash
+cd manifests
+```
+
+### 2. 📦 Appliquer les fichiers YAML
+```bash
+kubectl apply -f .
+```
+Cette commande applique tous les fichiers présents dans le dossier `manifests`.
+
+---
+
+## 🔍 Vérification du déploiement
+
+### 1. ✅ Vérifier les Pods
+```bash
+kubectl get pods
+```
+
+### 2. 🧠 Vérifier les Services
+```bash
+kubectl get svc
+```
+
+### 3. 🔎 Voir les logs d’un Pod
+```bash
+kubectl logs <nom-du-pod>
+```
+
