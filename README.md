@@ -18,3 +18,10 @@ Ce dépôt contient les fichiers de configuration et la documentation permettant
    source venv/bin/activate  # ou .\venv\Scripts\activate sur Windows
    pip install flask
    pip freeze > requirements.txt
+
+## ⚙️ Création du cluster Kubernetes avec Kind
+
+Le cluster local est créé via [Kind](https://kind.sigs.k8s.io/) avec la commande :
+
+```bash
+kind create cluster --name flask-cluster
