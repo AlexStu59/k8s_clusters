@@ -1,0 +1,20 @@
+# Environnement Python
+venv/
+__pycache__/
+*.pyc
+
+# Docker
+*.tar
+
+# OS spécifiques
+.DS_Store
+
+# Fichier de log
+*.log
+
+# Editeur
+.vscode/
+.idea/
+
+# Dépendances et fichiers compilés
+*.egg-info
